@@ -1,0 +1,22 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Guestbook",
+    "symbol": "GUEST",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "Guestbook",
+      "constructorArgs": ["$token"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0x0000000000000000000000000000000000000000",
+    "fee": 3000,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "LaunchToken has no constructor arguments. Guestbook receives the launch token at construction and requires no initialization calls or privileged owner. After token approval, signing burns 10 GUEST and stores a message of at most 280 bytes. The factory supplies the liquidity pool, MerkleDistributor and initialization-only pool guard. Policy and signed artifact linkage are handled by launch services."
+}
